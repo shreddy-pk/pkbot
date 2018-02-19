@@ -15,7 +15,7 @@
 
       stage ('Deploy') {
 
-		          sh 'ssh -p2244 pkbot@pkbotnode rm -rf /home/pkbot/pkbot'
+		          sh 'ssh -p2244 pkbot@pkbotnode sudo rm -rf /home/pkbot/pkbot'
               sh 'ssh -p2244 pkbot@pkbotnode git clone -b master https://github.com/vishnu4b3/pkbot.git'
               sh 'ssh -p2244 pkbot@pkbotnode "cd /home/pkbot/pkbot && npm install "'
 					  	sh 'ssh -p2244 pkbot@pkbotnode "cd /home/pkbot/pkbot && npm install hubot-slack --save"'

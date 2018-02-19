@@ -1,37 +1,28 @@
-    node {
+  node {
 
-        stage (‘Prepare environment’) {
+      stage ('Prepare environment') {
 
-	    git branch: ‘master’, url: ‘https://github.com/shreddy-pk/pkbot.git ’
-
-	      
+//	    git branch: 'master', url: 'https://github.com/shreddy-pk/pkbot.git '
+  
 
 	          }
 
-
-
-		      stage (‘Prepare environment’) {
-
-		          sh ‘ssh pkbot@118.102.131.235 sudo yum install epel-release’
-
-			      sh ‘ssh user@118.102.131.235 sudo yum install nodejs npm’
-
+      stage ('Prepare environment') {
+//
+//		        #sh 'ssh -p2244 -t pkbot@pkbotnode sudo yum install epel-release'
+//			      #sh 'ssh -p2244 pkbot@pkbotnode sudo yum install nodejs npm'
 			          }
 
-				      stage (‘Deploy’) {
+      stage ('Deploy') {
 
-				          sh ‘ssh pkbot@118.102.131.235 git clone https://github.com/shreddy-pk/pkbot.git’
-
-					  	sh ‘ssh pkbot@118.102.131.235 “cd pkbot && npm install hubot-slack --save”’
-
-							sh ‘ssh pkbot@118.102.131.235 export HUBOT_ADAPTER=slack’
-
-							    sh ‘ssh pkbot@118.102.131.235 export HUBOT_SLACK_TOKEN=xoxb-316277351014-4hTDsK3Om2TUOxRhuOa8Jnrd’
-
-							        sh ‘ssh pkbot@118.102.131.235 sh pkbot/bin/hubot’
-
-								    
-								        }
-
+		          sh 'ssh -p2244 pkbot@pkbotnode rm -rf /home/pkbot/pkbot'
+              sh 'ssh -p2244 pkbot@pkbotnode git clone -b dev https://github.com/vishnu4b3/pkbot.git'
+              sh 'ssh -p2244 pkbot@pkbotnode "cd /home/pkbot/pkbot && npm install "'
+					  	sh 'ssh -p2244 pkbot@pkbotnode "cd /home/pkbot/pkbot && npm install hubot-slack --save"'
+							sh 'ssh -p2244 pkbot@pkbotnode export HUBOT_ADAPTER=slack'
+					    sh 'ssh -p2244 pkbot@pkbotnode export HUBOT_SLACK_TOKEN=xoxb-316277351014-4hTDsK3Om2TUOxRhuOa8Jnrd'
+			        sh 'ssh -p2244 pkbot@pkbotnode sh /home/pkbot/pkbot/bin/hubot'
+		    
+              }
 									    }
 									    	

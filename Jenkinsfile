@@ -1,28 +1,8 @@
-  node {
+stage ('Deploy') {
 
-      stage ('Prepare environment') {
-
-//	    git branch: 'master', url: 'https://github.com/shreddy-pk/pkbot.git '
-  
-
-	          }
-
-      stage ('Prepare environment') {
-//
-//		        #sh 'ssh -p2244 -t pkbot@pkbotnode sudo yum install epel-release'
-//			      #sh 'ssh -p2244 pkbot@pkbotnode sudo yum install nodejs npm'
-			          }
-
-      stage ('Deploy') {
-
-		          sh 'ssh -p2244 pkbot@pkbotnode rm -rf /home/pkbot/pkbot'
-              sh 'ssh -p2244 pkbot@pkbotnode git clone -b master https://github.com/vishnu4b3/pkbot.git'
-              sh 'ssh -p2244 pkbot@pkbotnode "cd /home/pkbot/pkbot && npm install "'
-					  	sh 'ssh -p2244 pkbot@pkbotnode "cd /home/pkbot/pkbot && npm install hubot-slack --save"'
-							sh 'ssh -p2244 pkbot@pkbotnode export HUBOT_ADAPTER=slack'
-					    sh 'ssh -p2244 pkbot@pkbotnode export HUBOT_SLACK_TOKEN=xoxb-316277351014-4hTDsK3Om2TUOxRhuOa8Jnrd'
-			        sh 'ssh -p2244 pkbot@pkbotnode sh /home/pkbot/pkbot/bin/hubot &'
+         sh 'ssh -p2244 pkbot@pkbotnode '"cd / && git clone -b dev https://github.com/tsrimahesh/pkbot.git'
+         sh 'ssh -p2244 pkbot@pkbotnode '"cd /pkbot && sudo docker build -t hubotimage . && sudo docker volume create hubotvolume"'
+         sh 'ssh -p2244 pkbot@pkbotnode '"sudo docker run -itd -p 6379 --name hubot -v hubotvolume:/home/hubot/pkbot hubotimage"'
 		    
               }
 									    }
-									    	

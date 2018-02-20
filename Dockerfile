@@ -28,4 +28,3 @@ ENV HUBOT_SLACK_TOKEN=xoxb-316277351014-4hTDsK3Om2TUOxRhuOa8Jnrd
 RUN chmod +x /home/hubot/pkbot/run.sh
 RUN ls -l /home/hubot/pkbot/bin/hubot
 #ENTRYPOINT ["/home/hubot/pkbot/run.sh"]
-ENTRYPOINT ["/bin/bash"]

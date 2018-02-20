@@ -1,7 +1,4 @@
 FROM centos:latest
-
-ENTRYPOINT ["/home/hubot/pkbot/bin/hubot"]
-
 RUN yum install -y epel-release && yum -y install nodejs npm
 RUN useradd -ms  /bin/bash hubot
 USER hubot
@@ -26,4 +23,4 @@ RUN npm install hubot-slack --save
 RUN export HUBOT_ADAPTER=slack
 RUN export HUBOT_SLACK_TOKEN=xoxb-316277351014-4hTDsK3Om2TUOxRhuOa8Jnrd
 WORKDIR /home/hubot/pkbot
-ENTRYPOINT ["npm install hubot-slack --save", "npm install hubot-slack --save", "export HUBOT_SLACK_TOKEN=xoxb-316277351014-4hTDsK3Om2TUOxRhuOa8Jnrd", "/home/hubot/pkbot/bin/hubot"]
+ENTRYPOINT ["nohup /home/hubot/pkbot/bin/hubot &"]

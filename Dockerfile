@@ -10,15 +10,15 @@ RUN chown -R hubot:hubot /home/hubot/pkbot
 RUN chmod 0777 /home/hubot/pkbot
 #RUN git clone -b master https://github.com/vishnu4b3/pkbot.git
 WORKDIR /home/hubot/pkbot
-ADD bin  /home/hubot/pkbot/bin
-ADD external-scripts.json /home/hubot/pkbot/external-scripts.json
-ADD hubot-scripts.json /home/hubot/pkbot/hubot-scripts.json
-ADD package.json /home/hubot/pkbot/package.json
-ADD Procfile /home/hubot/pkbot/Procfile
-ADD README.md /home/hubot/pkbot/README.md
-ADD scripts /home/hubot/pkbot/scripts
-RUN chown -R hubot:hubot /home/hubot/pkbot
-RUN chmod 0777 /home/hubot/pkbot
+COPY --chown=hubot bin  /home/hubot/pkbot/bin
+COPY --chown=hubot external-scripts.json /home/hubot/pkbot/external-scripts.json
+COPY --chown=hubot hubot-scripts.json /home/hubot/pkbot/hubot-scripts.json
+COPY --chown=hubot package.json /home/hubot/pkbot/package.json
+COPY --chown=hubot Procfile /home/hubot/pkbot/Procfile
+COPY --chown=hubot README.md /home/hubot/pkbot/README.md
+COPY --chown=hubot scripts /home/hubot/pkbot/scripts
+#RUN chown -R hubot:hubot /home/hubot/pkbot
+#RUN chmod 0777 /home/hubot/pkbot
 VOLUME /home/hubot/pkbot
 #WORKDIR /home/hubot/pkbot
 ENV HUBOT_ADAPTER=slack

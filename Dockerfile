@@ -7,7 +7,8 @@ EXPOSE 6379
 # Create the directory to contain the Hubot instance
 #RUN mkdir -p /home/hubot/pkbot
 #RUN chmod 0777 /home/hubot/pkbot
-run git clone -b master https://github.com/vishnu4b3/pkbot.git
+WORKDIR /home/hubot
+RUN git clone -b master https://github.com/vishnu4b3/pkbot.git
 WORKDIR /home/hubot/pkbot
 #ADD bin  /home/hubot/pkbot/bin
 #ADD external-scripts.json /home/hubot/pkbot/external-scripts.json

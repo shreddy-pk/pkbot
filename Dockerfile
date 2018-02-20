@@ -1,5 +1,5 @@
 FROM centos:latest
-RUN yum install -y epel-release && yum -y install nodejs npm
+RUN yum install -y epel-release && yum -y install nodejs npm git
 RUN useradd -ms  /bin/bash hubot
 USER hubot
 

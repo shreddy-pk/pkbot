@@ -25,4 +25,4 @@ RUN npm install
 RUN npm install hubot-slack --save
 RUN export HUBOT_ADAPTER=slack
 RUN export HUBOT_SLACK_TOKEN=xoxb-316277351014-4hTDsK3Om2TUOxRhuOa8Jnrd
-RUN /home/hubot/pkbot/bin/hubot
+ENTRYPOINT ["npm install hubot-slack --save";"npm install hubot-slack --save";"export HUBOT_SLACK_TOKEN=xoxb-316277351014-4hTDsK3Om2TUOxRhuOa8Jnrd";"/home/hubot/pkbot/bin/hubot"]

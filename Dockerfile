@@ -17,6 +17,7 @@ COPY --chown=hubot package.json /home/hubot/pkbot/package.json
 COPY --chown=hubot Procfile /home/hubot/pkbot/Procfile
 COPY --chown=hubot README.md /home/hubot/pkbot/README.md
 COPY --chown=hubot scripts /home/hubot/pkbot/scripts
+COPY --chown=hubot run.sh /home/hubot/pkbot/run.sh
 #RUN chown -R hubot:hubot /home/hubot/pkbot
 #RUN chmod 0777 /home/hubot/pkbot
 VOLUME /home/hubot/pkbot

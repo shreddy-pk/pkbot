@@ -18,7 +18,8 @@ stage ('Code cloning') {
   stage ('Create Docker Container') {
    //sh 'ssh -p2244 pkbot@pkbotnode docker -H  tcp://192.168.10.235:2376 stop hubot'
    //sh 'ssh -p2244 pkbot@pkbotnode docker -H  tcp://192.168.10.235:2376 rm hubot'
-   sh 'ssh -p2244 pkbot@pkbotnode chmod +x /home/pkbot/pkbot/remove-container.sh && sh /home/pkbot/pkbot/remove-container.sh'
+   sh 'ssh -p2244 pkbot@pkbotnode chmod +x /home/pkbot/pkbot/remove-container.sh' 
+   sh 'ssh -p2244 pkbot@pkbotnode /home/pkbot/pkbot/remove-container.sh'
    // sh 'ssh -p2244 pkbot@pkbotnode docker -H  tcp://192.168.10.235:2376 rm $(docker ps -aq --filter name=hubot)'
    sh 'ssh -p2244 pkbot@pkbotnode docker -H  tcp://192.168.10.235:2376 run -itd -p 6379 --name hubot -v hubotvolume:/home/hubot/pkbot hubotimage'
 		    }

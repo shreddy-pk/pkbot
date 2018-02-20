@@ -8,7 +8,7 @@ stage ('Code cloning') {
 }
   stage ('Create Docker Image') {
    sh 'ssh -p2244 pkbot@pkbotnode docker -H  tcp://192.168.10.235:2376 build -t hubotimage /home/pkbot/pkbot/'
- sleep 30 
+ sleep 10 
   }
   //stage ('Create Docker Volume') {
   

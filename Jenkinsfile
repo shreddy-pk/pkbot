@@ -10,11 +10,11 @@ stage ('Code cloning') {
    sh 'ssh -p2244 pkbot@pkbotnode docker -H  tcp://192.168.10.235:2376 build -t hubotimage /home/pkbot/pkbot/'
  sleep 30 
   }
-  stage ('Create Docker Volume') {
+  //stage ('Create Docker Volume') {
   
-   sh 'ssh -p2244 pkbot@pkbotnode docker -H  tcp://192.168.10.235:2376 volume create hubotvolume'
-  sleep 10
-  }
+   //sh 'ssh -p2244 pkbot@pkbotnode docker -H  tcp://192.168.10.235:2376 volume create hubotvolume'
+ // sleep 10
+ // }
   stage ('Create Docker Container') {
    //sh 'ssh -p2244 pkbot@pkbotnode docker -H  tcp://192.168.10.235:2376 stop hubot'
    //sh 'ssh -p2244 pkbot@pkbotnode docker -H  tcp://192.168.10.235:2376 rm hubot'

@@ -1,2 +1,3 @@
-#!/bin/bash
-npm install && npm install hubot-slack --save && /home/hubot/pkbot/bin/hubot &
+#!/bin/sh
+cat /dev/null > startup.log && /opt/hubot/pkbot/bin/hubot & > startup.log 2>&1 && tail -f startup.log
+exec "$@"

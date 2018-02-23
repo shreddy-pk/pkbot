@@ -8,7 +8,7 @@ node {
   pkbot_docker_connect      = "tcp://192.168.10.235:2376"
   
   stage ('Code cloning') {
-   sh 'ssh -p2244 $hostname  rm  $pkbot_home'
+   sh 'ssh -p2244 pkbot@pkbotnode rm  -rf $pkbot_home'
    sh 'ssh -p2244 $hostname git clone -b master https://github.com/vishnu4b3/pkbot.git'
    sleep 5
   }

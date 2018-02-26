@@ -19,7 +19,7 @@ node {
   stage ('Build Docker Container') {
    sh "ssh -p2244 $hostname  chmod +x $pkbot_home/remove-container.sh" 
    sh "ssh -p2244 $hostname  $pkbot_home/remove-container.sh"
-   sh "ssh -p2244 $hostname  docker -H  $pkbot_docker_connect run -d -p 6379 --name $hubot_container_name $hubot_image_name"
+   sh "ssh -p2244 $hostname  docker -H  $pkbot_docker_connect run -d -p 6379 --name $hubot_container_name -e HUBOT_SLACK_TOKEN=$Slack_Token $hubot_image_name"
    
 	}
 }

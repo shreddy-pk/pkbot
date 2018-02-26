@@ -10,7 +10,6 @@ RUN chmod -R 777 /opt/hubot/pkbot
 USER hubot
 WORKDIR /opt/hubot/pkbot
 ENV HUBOT_ADAPTER=slack
-ENV HUBOT_SLACK_TOKEN=xoxb-316277351014-4hTDsK3Om2TUOxRhuOa8Jnrd
 RUN npm install
 RUN npm install hubot-slack --save
 EXPOSE 6379

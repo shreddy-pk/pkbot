@@ -1,6 +1,6 @@
 # Intigrate Hubot with jenkins
 
-Initialy we have to maintain this code into our Github repository. for this we can directly Fork this code in to our git hub account and add your github URL in jenkins file insted of https://github.com/vishnu4b3/pkbot.git. It will clone the data on the docker host. 
+Initialy we have to maintain this code into our Github repository. for this we can directly Fork the code from https://github.com/vishnu4b3/pkbot in to our github account and add your github repository URL in jenkins file insted of https://github.com/vishnu4b3/pkbot.git. It will clone the data on the docker host. 
 
 Then we have to add git hub credentials in jenkins server.
 
@@ -8,7 +8,7 @@ for this go to Jenkins-->credentials-->click on global-->on left select the add 
 
 Here we will add the github credentials(username and password).
 
-After adding credentials in to Jenkins, we have to create a pipeline job and configure this github credentials. in this pipe line configurations we have to check the option "This project is Parameterized" and add the parameter with name of "Slack_Token" this will help us at the time of running the job.we have to give the Slack token in this field.
+    After adding credentials in to Jenkins, we have to create a pipeline job and configure this github credentials. in this pipe line configurations we have to check the option "This project is Parameterized" and add the parameter with name of "Slack_Token" this will help us at the time of running the job.we have to give the Slack token in this field.
 
 This pipeline will deploy the Hubot on Docker container. so we have to install the docker on the destination machine and enable the Docker remote api. for this we have to add some data to cinfiguration file. and restart the Docker host.
 

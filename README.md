@@ -10,15 +10,7 @@ Here we will add the github credentials(username and password).
 
 After adding credentials in to Jenkins, we have to create a pipeline job and configure this github credentials. in this pipe line configurations we have to check the option "This project is Parameterized" and add the parameter with name of "Slack_Token" this will help us at the time of running the job.we have to give the Slack token in this field.
 
-This pipeline will deploy the Hubot on Docker container. so we have to install the docker on the destination machine and enable the Docker api. for this we have to add some data to cinfiguration file.
-
-This README is intended to help get you started. Definitely update and improve
-to talk about your own instance, how to use and deploy, what functionality is
-available, etc!
-
-[heroku]: http://www.heroku.com
-[hubot]: http://hubot.github.com
-[generator-hubot]: https://github.com/github/generator-hubot
+This pipeline will deploy the Hubot on Docker container. so we have to install the docker on the destination machine and enable the Docker remote api. for this we have to add some data to cinfiguration file.
 
 ### Running pkbot Locally
 

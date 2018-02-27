@@ -28,6 +28,8 @@ In Jenkins file we have to add the following variable values.
     pkbot_docker_connect      = "tcp://192.168.10.235:2376"    ------> This is the docker host URL, using this we can remotely login to docjer container and run the docker related commands.
   
     pkbot_home      = "/home/pkbot/pkbot"     ------> no need to change it, leave it as default.
+    
+ Then we have to run the Jenkins job, I will clone the data from github and run the jenkins file. jenkins file will connect to docker host and clone the same code from github and build the hubot docker image and using this docker image it will create the docker Container and also strat the hubot aplication.
 
 
 

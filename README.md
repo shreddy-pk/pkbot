@@ -8,13 +8,12 @@ for this go to Jenkins-->credentials-->click on global-->on left select the add 
 
 Here we will add the github credentials(username and password).
 
-    After adding credentials in to Jenkins, we have to create a pipeline job and configure this github credentials. in this pipe line configurations we have to check the option "This project is Parameterized" and add the parameter with name of "Slack_Token" this will help us at the time of running the job.we have to give the Slack token in this field.
+   After adding credentials in to Jenkins, we have to create a pipeline job and configure this github credentials. in this pipe line configurations we have to check the option "This project is Parameterized" and add the parameter with name of "Slack_Token" this will help us at the time of running the job.we have to give the Slack token in this field.
 
 This pipeline will deploy the Hubot on Docker container. so we have to install the docker on the destination machine and enable the Docker remote api. for this we have to add some data to cinfiguration file. and restart the Docker host.
 
-sudo vi /lib/systemd/system/docker.service
-
-ExecStart=/usr/bin/dockerd -H tcp://192.168.10.235:2376
+    sudo vi /lib/systemd/system/docker.service
+    ExecStart=/usr/bin/dockerd -H tcp://192.168.10.235:2376
 
 192.168.10.235 is the ip address of Docker machine.
 

@@ -1,98 +1,30 @@
 # Intigrate Hubot with jenkins
 
-Initialy we have to maintain this code into our Github repository. for this we can directly Fork this code in to our git hub account.
+Initialy we have to maintain this code into our Github repository. for this we can directly Fork this code in to our git hub account and add your github URL in jenkins file insted of https://github.com/vishnu4b3/pkbot.git. It will clone the data on the docker host. 
 
 Then we have to add git hub credentials in jenkins server.
 
-for this goto Jenkins-->credentials-->click on global-->on left select the add Credentials.
+for this go to Jenkins-->credentials-->click on global-->on left select the add Credentials.
 
 Here we will add the github credentials(username and password).
 
 After adding credentials in to Jenkins, we have to create a pipeline job and configure this github credentials. in this pipe line configurations we have to check the option "This project is Parameterized" and add the parameter with name of "Slack_Token" this will help us at the time of running the job.we have to give the Slack token in this field.
 
-This pipeline will deploy the Hubot on Docker container. so we have to install the docker on the destination machine and enable the Docker remote api. for this we have to add some data to cinfiguration file.
+This pipeline will deploy the Hubot on Docker container. so we have to install the docker on the destination machine and enable the Docker remote api. for this we have to add some data to cinfiguration file. and restart the Docker host.
 
-### Running pkbot Locally
+sudo vi /lib/systemd/system/docker.service
 
+ExecStart=/usr/bin/dockerd -H tcp://192.168.10.235:2376
 
+192.168.10.235 is the ip address of Docker machine.
 
+In Jenkins file we have to add the following variable values.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  hostname  = "pkbot@pkbotnode"  -------> this is hostname of docker host, we should have to able to ping with this host name or elase we can use IP addres.
+  hubot_image_name  = "stagehubot" ------> this is Docker image name you can leave it default or you can change it.
+  hubot_container_name  = "hubot" -------> This is Docker container name you can leave it default or you can change it.
+	pkbot_home      = "/home/pkbot/pkbot" ----> no need to change it, leave it as default.
+  pkbot_docker_connect      = "tcp://192.168.10.235:2376"  ------> This is the docker host URL, using this we can remotely login to docjer container and run the docker related commands.
 
 
 

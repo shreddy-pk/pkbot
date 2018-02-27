@@ -4,7 +4,7 @@ Initialy we have to maintain this code into our Github repository. for this we c
 
 Then we have to add git hub credentials in jenkins server.
 
-for this go to Jenkins-->credentials-->click on global-->on left select the add Credentials.
+    for this go to Jenkins-->credentials-->click on global-->on left select the add Credentials.
 
 Here we will add the github credentials(username and password).
 
@@ -19,15 +19,15 @@ This pipeline will deploy the Hubot on Docker container. so we have to install t
 
 In Jenkins file we have to add the following variable values.
 
-  hostname  = "pkbot@pkbotnode"  -------> this is hostname of docker host, we should have to able to ping with this host name or elase we can use IP addres.
+    hostname  = "pkbot@pkbotnode"  -------> this is hostname of docker host, we should have to able to ping with this host name or elase we can use IP addres.
   
-  hubot_image_name  = "stagehubot" ------> this is Docker image name you can leave it default or you can change it.
+    hubot_image_name  = "stagehubot" ------> this is Docker image name you can leave it default or you can change it.
   
-  hubot_container_name  = "hubot" -------> This is Docker container name you can leave it default or you can change it.
+    hubot_container_name  = "hubot" -------> This is Docker container name you can leave it default or you can change it.
   
-  pkbot_docker_connect      = "tcp://192.168.10.235:2376"  ------> This is the docker host URL, using this we can remotely login to docjer container and run the docker related commands.
+    pkbot_docker_connect      = "tcp://192.168.10.235:2376"  ------> This is the docker host URL, using this we can remotely login to docjer container and run the docker related commands.
   
-  pkbot_home      = "/home/pkbot/pkbot" ----> no need to change it, leave it as default.
+    pkbot_home      = "/home/pkbot/pkbot" ----> no need to change it, leave it as default.
 
 
 

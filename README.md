@@ -21,9 +21,13 @@ ExecStart=/usr/bin/dockerd -H tcp://192.168.10.235:2376
 In Jenkins file we have to add the following variable values.
 
   hostname  = "pkbot@pkbotnode"  -------> this is hostname of docker host, we should have to able to ping with this host name or elase we can use IP addres.
+  
   hubot_image_name  = "stagehubot" ------> this is Docker image name you can leave it default or you can change it.
+  
   hubot_container_name  = "hubot" -------> This is Docker container name you can leave it default or you can change it.
+  
 	pkbot_home      = "/home/pkbot/pkbot" ----> no need to change it, leave it as default.
+  
   pkbot_docker_connect      = "tcp://192.168.10.235:2376"  ------> This is the docker host URL, using this we can remotely login to docjer container and run the docker related commands.
 
 

@@ -2,6 +2,16 @@
 
 Initialy we have to maintain this code into our Github repository. for this we can directly Fork this code in to our git hub account.
 
+Then we have to add git hub credentials in jenkins server.
+
+for this goto Jenkins-->credentials-->click on global-->on left select the add Credentials.
+
+Here we will add the github credentials(username and password).
+
+After adding credentials in to Jenkins, we have to create a pipeline job and configure this github credentials. in this pipe line configurations we have to check the option "This project is Parameterized" and add the parameter with name of "Slack_Token" this will help us at the time of running the job.we have to give the Slack token in this field.
+
+This pipeline will deploy the Hubot on Docker container. so we have to install the docker on the destination machine and enable the Docker api. for this we have to add some data to cinfiguration file.
+
 This README is intended to help get you started. Definitely update and improve
 to talk about your own instance, how to use and deploy, what functionality is
 available, etc!

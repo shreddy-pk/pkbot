@@ -1,4 +1,4 @@
-# Intigrate Hubot with jenkins
+# Integrate Hubot with jenkins
 
 Initialy we have to maintain this code into our Github repository. for this we can directly Fork the code from https://github.com/vishnu4b3/pkbot in to our github account and add your github repository URL in jenkins file insted of https://github.com/vishnu4b3/pkbot.git. It will clone the data on the docker host. 
 
